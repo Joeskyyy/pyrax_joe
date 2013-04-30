@@ -7,12 +7,21 @@ import pyrax
 
 creds_file = os.path.expanduser("~/.rackspace_cloud_credentials")
 pyrax.set_credential_file(creds_file)
-cs = pyrax.cloudservers
 
-print "Here is a list of your current servers:"
-for server in cs.servers.list():
-        print "Name:",server.name
-        print "\tID:",server.id
-nameServ = raw_input("What is the name of the server you need to check the status of?: ")
-serv = cs.servers.find(name=nameServ)
-print "%s is currently in the state %s" % (nameServ, serv.status)
+# Prints out all your current servers and their statuses
+# Note: lists for DFW and ord
+print "Here is a list of your current servers and their status"
+csDfw = pyrax.connect_to_cloudservers(region="DFW")
+csOrd = pyrax.connect_to_cloudservers(region="ORD")
+for dfwServer in csDfw.servers.list():
+        print "Name:",dfwServer.name
+        print "   ID:",dfwServer.id
+        print "   Region: DFW"
+	print "   Status:",dfwServer.status
+for ordServer in csOrd.servers.list():
+        print "Name:",ordServer.name
+        print "   ID:",ordServer.id
+        print "   Region: ORD"
+	print "   Status:", ordServer.status
+print
+

@@ -1,13 +1,19 @@
 #!/usr/bin/env python
 
+# Lists all flavours available
+
 import os
 import pyrax
 
+# Credentials
 creds_file = os.path.expanduser("~/.rackspace_cloud_credentials")
 pyrax.set_credential_file(creds_file)
 cs = pyrax.cloudservers
 
+# Gets flavours
 flvs = cs.flavors.list()
+
+# Prints out each flavour
 for flv in flvs:
 	print "Name:", flv.name
 	print " ID:", flv.id
