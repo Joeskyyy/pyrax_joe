@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# Simply lists the containers you have
+
 import os
 import pyrax
 
