@@ -1,13 +1,11 @@
 1. Create server from image
 	- For both ORD and DFW
 	- Maybe just add into createServer.py
-2. Rename Container
-	- Move all objects from one container to new one
-3. Add ORD Functionality to Create Server
-4. Other basic API
+2. Add ORD Functionality to Create Server
+3. Other basic API
 	- Rename server
 	- Reboot server
-5. Create an all in one program
+4. Create an all in one program
 	- Menu selections for tasks
 		- Cloud Server
 			- Cloud Server Tasks
