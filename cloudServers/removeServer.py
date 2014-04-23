@@ -7,6 +7,7 @@ import sys
 import time
 import pyrax
 
+pyrax.set_setting("identity_type", "rackspace")
 credsFile = os.path.expanduser("~/.rackspace_cloud_credentials")
 pyrax.set_credential_file(credsFile)
 
