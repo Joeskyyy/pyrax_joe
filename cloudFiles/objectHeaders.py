@@ -17,7 +17,7 @@ pyrax.set_credential_file(creds_file)
 cf = pyrax.connect_to_cloudfiles(region="ORD")
 
 # List containers and then prompt for container to delete
-cont_name = "mp3"
+cont_name = ""
 cont = cf.get_container(cont_name)
 metadata = {""}
 
